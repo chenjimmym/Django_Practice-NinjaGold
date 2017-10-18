@@ -8,10 +8,16 @@
     </head>
     <body>
         <div class="container">
-            <h4>Your Gold: placeholder</h4>
+            <h4>Your Gold: {{request.session.gold_amount}}</h4>
+            <form action="/process_gold" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="place" value="reset">
+                <input type="submit" value="Reset Gold">
+            </form>
             <div class="row">
                 <div class="col-md-3">
                     <form action="/process_gold" method="post">
+                        {% csrf_token %}
                         <h3>Farm</h3>
                         <p>(earns 10-20 golds)</p>
                         <input type="hidden" name="place" value="farm">
@@ -20,6 +26,7 @@
                 </div>
                 <div class="col-md-3">
                     <form action="/process_gold" method="post">
+                        {% csrf_token %}
                         <h3>Cave</h3>
                         <p>(earns 5-10 golds)</p>
                         <input type="hidden" name="place" value="cave">
@@ -28,6 +35,7 @@
                 </div>
                 <div class="col-md-3">
                     <form action="/process_gold" method="post">
+                        {% csrf_token %}
                         <h3>House</h3>
                         <p>(earns 2-5 golds)</p>
                         <input type="hidden" name="place" value="house">
@@ -36,6 +44,7 @@
                 </div>
                 <div class="col-md-3">
                     <form action="/process_gold" method="post">
+                        {% csrf_token %}
                         <h3>Casino</h3>
                         <p>(earns/takes 0-50 golds)</p>
                         <input type="hidden" name="place" value="casino">
