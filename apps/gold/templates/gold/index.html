@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ninja Gold</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <h4>Your Gold: placeholder</h4>
+            <div class="row">
+                <div class="col-md-3">
+                    <form action="/process_gold" method="post">
+                        <h3>Farm</h3>
+                        <p>(earns 10-20 golds)</p>
+                        <input type="hidden" name="place" value="farm">
+                        <input type="submit" value="Find Gold!">
+                    </form>
+                </div>
+                <div class="col-md-3">
+                    <form action="/process_gold" method="post">
+                        <h3>Cave</h3>
+                        <p>(earns 5-10 golds)</p>
+                        <input type="hidden" name="place" value="cave">
+                        <input type="submit" value="Find Gold!">
+                    </form>
+                </div>
+                <div class="col-md-3">
+                    <form action="/process_gold" method="post">
+                        <h3>House</h3>
+                        <p>(earns 2-5 golds)</p>
+                        <input type="hidden" name="place" value="house">
+                        <input type="submit" value="Find Gold!">
+                    </form>
+                </div>
+                <div class="col-md-3">
+                    <form action="/process_gold" method="post">
+                        <h3>Casino</h3>
+                        <p>(earns/takes 0-50 golds)</p>
+                        <input type="hidden" name="place" value="casino">
+                        <input type="submit" value="Find Gold!">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
