@@ -13,9 +13,9 @@
                 {% csrf_token %}
                 <input type="hidden" name="place" value="reset">
                 <input type="submit" value="Reset Gold">
-            </form>
-            <div class="row">
-                <div class="col-md-3">
+            </form><br>
+            <div class="row" style="text-align: center;">
+                <div class="col-md-3 well">
                     <form action="/process_gold" method="post">
                         {% csrf_token %}
                         <h3>Farm</h3>
@@ -24,7 +24,7 @@
                         <input type="submit" value="Find Gold!">
                     </form>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 well">
                     <form action="/process_gold" method="post">
                         {% csrf_token %}
                         <h3>Cave</h3>
@@ -33,7 +33,7 @@
                         <input type="submit" value="Find Gold!">
                     </form>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 well">
                     <form action="/process_gold" method="post">
                         {% csrf_token %}
                         <h3>House</h3>
@@ -42,7 +42,7 @@
                         <input type="submit" value="Find Gold!">
                     </form>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 well">
                     <form action="/process_gold" method="post">
                         {% csrf_token %}
                         <h3>Casino</h3>
@@ -52,6 +52,13 @@
                     </form>
                 </div>
             </div>
+            {% for data in request.session.messages%}
+                {% if data.earn_lost == 'positive' %}
+                <p style="color: green">Earned {{data.gold_amount}} golds from the {{data.place}}! ({{data.time}})</p>
+                {% else %}
+                <p style="color: red">Lost -{{data.gold_amount}} golds from the {{data.place}}! ({{data.time}})</p>
+                {% endif %}
+            {% endfor %}
         </div>
     </body>
 </html>
